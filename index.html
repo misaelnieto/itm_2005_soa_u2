@@ -1,0 +1,554 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+        <link rel="next" href="configuracion/">
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.5">
+    
+    
+      
+        <title>Arquitectura Orientada a Servicios</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.8608ea7d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#arquitectura-orientada-a-servicios" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="." title="Arquitectura Orientada a Servicios" class="md-header__button md-logo" aria-label="Arquitectura Orientada a Servicios" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Arquitectura Orientada a Servicios
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Inicio
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Arquitectura Orientada a Servicios" class="md-nav__button md-logo" aria-label="Arquitectura Orientada a Servicios" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Arquitectura Orientada a Servicios
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#unidad-2-servicios-web-soap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unidad 2 - Servicios Web SOAP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Unidad 2 - Servicios Web SOAP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#asignacion-de-nombre-de-modulos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asignación de nombre de módulos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedimiento-para-crear-tus-practicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Procedimiento para crear tus prácticas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="configuracion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuracion de tu entorno
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="proyectos/index.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documentación de servicios web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#unidad-2-servicios-web-soap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unidad 2 - Servicios Web SOAP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Unidad 2 - Servicios Web SOAP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#asignacion-de-nombre-de-modulos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asignación de nombre de módulos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedimiento-para-crear-tus-practicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Procedimiento para crear tus prácticas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="arquitectura-orientada-a-servicios">Arquitectura Orientada a Servicios<a class="headerlink" href="#arquitectura-orientada-a-servicios" title="Permanent link">#</a></h1>
+<p>Instituto Tecnológico de Mexicali - 2005-1</p>
+<h2 id="unidad-2-servicios-web-soap">Unidad 2 - Servicios Web SOAP<a class="headerlink" href="#unidad-2-servicios-web-soap" title="Permanent link">#</a></h2>
+<p>El objetivo de esta unidad es hacer que obtengas experiencia practica implementando y consumiendo un servicio web SOAP.</p>
+<p>En este repositorio integrarás tu trabajo en forma de un pull request (PR) de github.
+Para que el PR sea integrado en la rama principal (main), debe de cumplir los siguientes requisitos:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> El módulo del estudiante contiene un archivo <code>README.md</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> El archivo <code>README.md</code> contiene la descripción de tu servicio y los requerimientos funcionales.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> El archivo <code>README.md</code> describe en qué ruta se accede a tu servicio web</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> El archivo <code>README.md</code> describe las operaciones y tipos de datos que tu servicio web exporta.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Se han implementado todos los requerimientos funcionales</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Incluye pruebas integración</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Todas las pruebas pasan</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> El análisis de cobertura de código es de 100%</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Todos los errores del análisis estático de código han sido arreglados.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Fecha límite para enviar sus PR</p>
+<p>Todos los PRs deberán ser debidamente integrados a la rama principal<strong> a más tardar a las 5pm (Hora del pacífico) del Viernes 7 de Marzo</strong>.</p>
+</div>
+<h3 id="asignacion-de-nombre-de-modulos">Asignación de nombre de módulos<a class="headerlink" href="#asignacion-de-nombre-de-modulos" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Estudiante</th>
+<th>Nombre de módulo</th>
+<th>Módulo de servicio web</th>
+<th>Módulo de pruebas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Juan Carlos Paredes Gatopo</td>
+<td><code>jparedes</code></td>
+<td><code>webservice.jparedes</code></td>
+<td><code>tests.jparedes</code></td>
+</tr>
+<tr>
+<td>Diego Iván Dueñas Padilla</td>
+<td><code>dduenas</code></td>
+<td><code>webservice.dduenas</code></td>
+<td><code>tests.dduenas</code></td>
+</tr>
+<tr>
+<td>David Ramos Luna</td>
+<td><code>dramos</code></td>
+<td><code>webservice.dramos</code></td>
+<td><code>tests.dramos</code></td>
+</tr>
+<tr>
+<td>Rodolfo García Galaz</td>
+<td><code>rgarcia</code></td>
+<td><code>webservice.rgarcia</code></td>
+<td><code>tests.rgarcia</code></td>
+</tr>
+<tr>
+<td>Karim Antonio Soto López</td>
+<td><code>ksoto</code></td>
+<td><code>webservice.ksoto</code></td>
+<td><code>tests.ksoto</code></td>
+</tr>
+<tr>
+<td>Rosa Elena Palma y Meza Buelna</td>
+<td><code>rpalma</code></td>
+<td><code>webservice.rpalma</code></td>
+<td><code>tests.rpalma</code></td>
+</tr>
+<tr>
+<td>Kevin Hernandez Zazueta</td>
+<td><code>khernandez</code></td>
+<td><code>webservice.khernandez</code></td>
+<td><code>tests.khernandez</code></td>
+</tr>
+<tr>
+<td>Jazmin Heredia Cota</td>
+<td><code>jheredia</code></td>
+<td><code>webservice.jheredia</code></td>
+<td><code>tests.jheredia</code></td>
+</tr>
+<tr>
+<td>José Manuel Arce Higuera</td>
+<td><code>jarce</code></td>
+<td><code>webservice.jarce</code></td>
+<td><code>tests.jarce</code></td>
+</tr>
+<tr>
+<td>Isaí Moreno Mendoza</td>
+<td><code>imoreno</code></td>
+<td><code>webservice.imoreno</code></td>
+<td><code>tests.imoreno</code></td>
+</tr>
+<tr>
+<td>Imanol Maximiliano Mayo Alvaro</td>
+<td><code>imayo</code></td>
+<td><code>webservice.imayo</code></td>
+<td><code>tests.imayo</code></td>
+</tr>
+<tr>
+<td>Jesús Javier Chaidez Delgado</td>
+<td><code>jchaidez</code></td>
+<td><code>webservice.jchaidez</code></td>
+<td><code>tests.jchaidez</code></td>
+</tr>
+<tr>
+<td>Javier Contreras Partida</td>
+<td><code>jcontreras</code></td>
+<td><code>webservice.jcontreras</code></td>
+<td><code>tests.jcontreras</code></td>
+</tr>
+<tr>
+<td>Adrian Fernando Santelis Mendoza</td>
+<td><code>asantelis</code></td>
+<td><code>webservice.asantelis</code></td>
+<td><code>tests.asantelis</code></td>
+</tr>
+<tr>
+<td>Fabian Ignacio Calzada Lozano</td>
+<td><code>fcalzada</code></td>
+<td><code>webservice.fcalzada</code></td>
+<td><code>tests.fcalzada</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="procedimiento-para-crear-tus-practicas">Procedimiento para crear tus prácticas<a class="headerlink" href="#procedimiento-para-crear-tus-practicas" title="Permanent link">#</a></h3>
+<ol>
+<li>Revisa tu módulo de servicio web y módulo de pruebas asignado</li>
+<li>Haz un Fork de este repositorio en tu cuenta personal de Github</li>
+<li>Implementa tu servicio web en tu módulo de servicio web asignado.<blockquote>
+<p>:point_right: No olvides exponer un objeto llamado <code>wsgi_app</code> en tu módulo de servicio web para el middleware de WSGI publique tu aplicación automáticamente. Por ejemplo, si tu nombre de módulo es <code>ffernandez</code>, el middleware de WSGI buscará la aplicación WSGI en <code>webservice.ffernandez.wsgi_app</code>. Si la encuentra, la publicará en la ruta <code>/ws/ffernadez</code>. Si no la encuentra, el servidor web sólo registrará una advertencia. </p>
+</blockquote>
+</li>
+<li>Escribe las pruebas de integración en en tu módulo de pruebas asignado.</li>
+<li>Documenta tu servicio web en el archivo <code>README.md</code> dentro de tu módulo de servicio web.</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">Manos a la obra</p>
+<p>Buena suerte</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+    
+  </body>
+</html>
