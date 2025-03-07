@@ -38,7 +38,7 @@ def test_service_methods(ws):
     c = ws.service.listaClientes()
     assert len(c.Cliente) == 2
     assert c.Cliente[0].nombre == 'Juan'
-    assert c.Cliente[1] == 'Pedro'
+    assert c.Cliente[1].nombre == 'Pedro'
 
     # Buscamos un libro que existe
     """op = ws.service.buscar("El señor de los anillos")
