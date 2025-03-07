@@ -136,7 +136,7 @@ class RecetaService(Service):
         if not recetas_existentes:
             return Resultado.ok("No se encontraron recetas con el ingrediente dado.", [])
         if len(recetas_existentes)==1:
-            Resultado.ok(f"Se encontro una receta con el ingrediente {ingrediente}.", recetas_existentes)
+            return Resultado.ok(f"Se encontro una receta con el ingrediente {ingrediente}.", recetas_existentes)
 
         return Resultado.ok(f"Se encontraron {len(recetas_existentes)} recetas con el ingrediente {ingrediente}.", recetas_existentes)
     
@@ -162,7 +162,7 @@ class RecetaService(Service):
         
         nueva_receta = Receta(nombre = nombre, descripcion = descripcion, ingredientes =  ingredientes, pasos = pasos)
         _recetas_db.append(nueva_receta)
-        return Resultado.ok("Se agrego receta nueva",_recetas_db)
+        return Resultado.ok("Se agrego receta nueva.",_recetas_db)
 
 
     @srpc(String, String, Array(String), Array(String),_returns=Resultado)
