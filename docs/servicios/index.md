@@ -14,3 +14,4 @@ Indice de proyectos
 =======
 | Rodolfo Garcia   | `rgarcia`  | [Recetas](rgarcia.md) |
 >>>>>>> 6d49261 (Pruebas y documentacion)
+| Rodolfo Garcia   | `rgarcia`  | [Recetas](rgarcia.md) |
