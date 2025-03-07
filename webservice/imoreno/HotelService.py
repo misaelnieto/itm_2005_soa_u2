@@ -15,17 +15,14 @@ def _listaClientes():
 
 
 class Cliente(ComplexModel):
-    """Modelo que representa un retiro o un depósito en la alcancía.
-
-    Los depósitos tienen un valor positivo y los retiros un valor negativo.
-    """
+    """Modelo que representa una entrada de cliente al hotel."""
     nombre = Unicode
     ap_primero = Unicode
     ap_segundo = Unicode
     num_habitación = Integer
 
 class Resultado(ComplexModel):
-    """Representa el resultado de una operación de depósito o retiro. Opcionalmente incluye el saldo actual."""
+    """Representa el resultado de una transacción."""
     status = Unicode
     message = Unicode
 
