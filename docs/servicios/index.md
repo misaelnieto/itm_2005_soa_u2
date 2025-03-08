@@ -3,7 +3,7 @@ Indice de proyectos
 | Nombre | Módulo | Documentación de servicio web                        |
 | ----------- | -------------- | ---
 | Noe Nieto   | `nnieto`  | Alcancía |
-<<<<<<< HEAD
+| Rodolfo Garcia   | `rgarcia`  | [Recetas](rgarcia.md) |<<<<<<< HEAD
 | Adrian Santelis   | `asantelis`  | [Animales](asantelis.md) |
 | Elena Palma | `rpalma`  | [Agenda](rpalma.md)|
 | Juan Paredes   | `jparedes`  | [Libreria](jparedes.md) |
