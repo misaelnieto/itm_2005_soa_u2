@@ -11,6 +11,7 @@ Indice de proyectos
 | Imanol Mayo | `imayo` | [Eventos](imayo.md)|
 | Diego Dueñas   | `dduenas`  | [Estudiantes](dduenas.md) |
 | Karim Soto   | `ksoto`  | [Peliculas](ksoto.md) |
+=======
 | Rodolfo Garcia   | `rgarcia`  | [Recetas](rgarcia.md) |
 >>>>>>> 6d49261 (Pruebas y documentacion)
 | Rodolfo Garcia   | `rgarcia`  | [Recetas](rgarcia.md) |
